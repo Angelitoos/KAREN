@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trastorno Esquizoide</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="WARA.CSS">
+
+</head>
+<body>
+
+<div class="menu-btn" id="menu-btn">
+  <div></div><div></div><div></div>
+</div>
+
+<div class="sidebar" id="sidebar">
+  <div class="logo-container">
+    <img src="karen.png" alt="Logo" class="logo-img" > <p> </p>
+  </div>
+  <a href="#inicio"> <i class="fa-solid fa-house"></i>Inicio</a>
+  <a href="#quees"><i class="fa-solid fa-magnifying-glass"></i>¿Qué es?</a>
+  <a href="#sintomas"><i class="fa-solid fa-circle-exclamation"></i>Síntomas</a>
+  <a href="#causas"><i class="fa-solid fa-hand-point-up"></i>Causas</a>
+  <a href="#tratamiento"><i class="fa-solid fa-user-nurse"></i>Tratamiento</a>
+  <a href="graficas.html"><i class="fa-solid fa-chart-pie"></i></i>Estadisticas</a>
+  <a href="#contacto"><i class="fa-solid fa-phone-volume"></i>Contacto</a>
+</div>
+
+<div class="content">
+  <h1 id="inicio">Trastorno Esquizoide de la Personalidad <img src="karen.png" alt="Titulo" class="titulo-img"></h1>
+
+  <!-- SECCIÓN ¿QUÉ ES? -->
+  <section id="quees">
+    <h2>Descripción</h2>
+    <p>En este video se describe un poco mas a fondo y de manera mas explicita de que trata el trastorno:</p>
+    
+    <!-- CONTENEDOR DEL VIDEO -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/vlnRMma6Xvw" 
+                title="Trastorno Esquizoide - Explicación" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
+    
+    <p class="video-description">Video explicativo sobre el Trastorno Esquizoide de la Personalidad</p>
+    
+    <p>El trastorno esquizoide de la personalidad se caracteriza por un patrón general de desconexión de las relaciones sociales y una gama restringida de expresión emocional.</p>
+  </section>
+  
+  <!-- Otras secciones pueden ir aquí -->
+
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const sidebar = document.getElementById('sidebar');
+const links = sidebar.querySelectorAll('a');
+
+menuBtn.addEventListener('click', () => {
+  menuBtn.classList.toggle('active');
+  sidebar.classList.toggle('active');
+});
+
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    menuBtn.classList.remove('active');
+  });
+});
+
+// Cerrar menú al hacer clic fuera
+document.addEventListener('click', (e) => {
+  if (!sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+    sidebar.classList.remove('active');
+    menuBtn.classList.remove('active');
+  }
+});
+</script>
+</body>
+</html>
